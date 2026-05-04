@@ -27,5 +27,7 @@ jobs:
         run: python -m pytest tests/test_unit
       - name: Run BeHave
         run: behave tests/test_functional/features
-      - name: Couverture
-        run: python -m pytest --cov=formation_indus_ds_avancee/ tests/test_unit/ -vv -p no:warnings
+      - name: Quality
+        run: |
+          python -m pytest --cov=formation_indus_ds_avancee/ tests/test_unit/ -vv -p no:warnings
+          ./tests/tests_pyramid.sh
