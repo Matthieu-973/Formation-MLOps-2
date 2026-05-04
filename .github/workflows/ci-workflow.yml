@@ -20,10 +20,14 @@ jobs:
       - name: Install dev dependencies
         run:  pip install -r requirements_test.txt
       - name: Run Linter
-        run:  pip install flake8
+        run: 
+          - pip install flake8
+          - flake8 formation_indus_ds_avancee
       - name: Run Vulture
-        run:  pip install vulture
+        run:  
+          - pip install vulture
+          - vulture formation_indus_ds_avancee
       - name: Run tests
-        run:  "Trainee should add command to run test"
+        run:  make tests
 
 
