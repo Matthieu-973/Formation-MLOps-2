@@ -28,6 +28,6 @@ jobs:
           pip install vulture
           vulture .
       - name: Run tests
-        run:  make tests
+        run:  make tests-unitaires
 
 
