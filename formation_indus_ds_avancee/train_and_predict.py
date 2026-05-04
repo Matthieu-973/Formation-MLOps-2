@@ -19,6 +19,7 @@ def train_model(features: pd.DataFrame, model_registry_folder: str) -> None:
     model.fit(X, y)
     joblib.dump(model, os.path.join(model_registry_folder, 'model.joblib'))
 
+
 def predict(features: pd.DataFrame, model_path: str) -> pd.DataFrame:
     model = joblib.load(model_path)
     features['predictions'] = model.predict(features)
